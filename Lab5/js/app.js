@@ -4,6 +4,11 @@ var app = new Vue({
     bits: [],
     encodedBits: [],
     encodedNrzBits: [],
+    encodedNrzmBits: [],
+    encodedNrzsBits: [],
+    encodedRzBits: [],
+    encodedBiphmBits: [],
+    encodedBiphsBits: [],
     status: "",
     numberOfBits: 8,
     validateBit: validateBit,
@@ -15,6 +20,11 @@ var app = new Vue({
     encode: function () {
       this.encodedBits = getManchesterLevelEncoding(this.bits);
       this.encodedNrzBits = getNRZ(this.bits);
+      this.encodedNrzmBits = getNRZM(this.bits);
+      this.encodedNrzsBits = getNRZS(this.bits);
+      this.encodedRzBits = getRZ(this.bits);
+      this.encodedBiphmBits = getBiphM(this.bits);
+      this.encodedBiphsBits = getBiphS(this.bits);
     },
   },
 });
